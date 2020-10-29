@@ -11,6 +11,11 @@
 		857AA1DC254307CA00994EC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857AA1DB254307CA00994EC6 /* ContentView.swift */; };
 		857AA1DE254307CE00994EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857AA1DD254307CE00994EC6 /* Assets.xcassets */; };
 		857AA1E1254307CE00994EC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857AA1E0254307CE00994EC6 /* Preview Assets.xcassets */; };
+		857AA1EA2543486E00994EC6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857AA1E92543486E00994EC6 /* HomeView.swift */; };
+		85C483042546C51B00E14487 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C483032546C51B00E14487 /* AchievementsView.swift */; };
+		85C4830825473EB100E14487 /* AchievementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4830725473EB100E14487 /* AchievementDetailView.swift */; };
+		85C4830B25475F8C00E14487 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4830A25475F8B00E14487 /* Achievement.swift */; };
+		85F302C1254839DF001B23AF /* LabeledProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F302C0254839DF001B23AF /* LabeledProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		857AA1DD254307CE00994EC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		857AA1E0254307CE00994EC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		857AA1E2254307CE00994EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857AA1E92543486E00994EC6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		85C483032546C51B00E14487 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		85C4830725473EB100E14487 /* AchievementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailView.swift; sourceTree = "<group>"; };
+		85C4830A25475F8B00E14487 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		85F302C0254839DF001B23AF /* LabeledProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,11 @@
 			children = (
 				857AA1D9254307CA00994EC6 /* Do_You_Remember_App.swift */,
 				857AA1DB254307CA00994EC6 /* ContentView.swift */,
+				857AA1E92543486E00994EC6 /* HomeView.swift */,
+				85F302C0254839DF001B23AF /* LabeledProgressView.swift */,
+				85C483032546C51B00E14487 /* AchievementsView.swift */,
+				85C4830A25475F8B00E14487 /* Achievement.swift */,
+				85C4830725473EB100E14487 /* AchievementDetailView.swift */,
 				857AA1DD254307CE00994EC6 /* Assets.xcassets */,
 				857AA1E2254307CE00994EC6 /* Info.plist */,
 				857AA1DF254307CE00994EC6 /* Preview Content */,
@@ -138,8 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85C483042546C51B00E14487 /* AchievementsView.swift in Sources */,
+				85C4830825473EB100E14487 /* AchievementDetailView.swift in Sources */,
+				857AA1EA2543486E00994EC6 /* HomeView.swift in Sources */,
+				85F302C1254839DF001B23AF /* LabeledProgressView.swift in Sources */,
 				857AA1DC254307CA00994EC6 /* ContentView.swift in Sources */,
 				857AA1DA254307CA00994EC6 /* Do_You_Remember_App.swift in Sources */,
+				85C4830B25475F8C00E14487 /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.koll.niklas.Do-You-Remember-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "me.koll.niklas.Do-You-Remember-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
