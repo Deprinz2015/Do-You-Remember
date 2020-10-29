@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Do_You_Remember_App: App {
+    let context = PersistenceManager.context
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environment(\.managedObjectContext, context)
         }
     }
 }

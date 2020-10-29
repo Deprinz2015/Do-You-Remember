@@ -16,7 +16,7 @@ struct AchievementItem: View {
                 .resizable()
                 .frame(width: 25, height: 25)
             VStack(alignment: .leading) {
-                Text(achievement.title).font(.headline)
+                Text(achievement.title ?? "Achievement").font(.headline)
                 Text("\(achievement.currentProgress, specifier: "%g") / \(achievement.maxProgress, specifier: "%g")")
                     .font(.subheadline)
             }
@@ -29,13 +29,7 @@ struct AchievementsView: View {
     let showAchievements = ["All", "Unfinished", "Finished"]
     @State private var selection = 1
     
-    var achievements: [Achievement] {
-        var temp = [Achievement]()
-        for i in 0 ..< 20 {
-            temp.append(Achievement(title: "Achievement \(i + 1)", finished: i < 5, currentProgress: i < 5 ? 200.0 : 100.0))
-        }
-        return temp
-    }
+    @FetchRequest(entity: Achievement.entity(), sortDescriptors: []) var achievements: FetchedResults<Achievement>
     
     var body: some View {
         NavigationView {

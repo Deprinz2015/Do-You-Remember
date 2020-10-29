@@ -19,7 +19,7 @@ struct AchievementDetailView: View {
                         .frame(width: 100, height: 100)
                         .padding()
                     
-                    Text(achievement.title)
+                    Text(achievement.title ?? "Achievement")
                         .font(.largeTitle)
                         .padding()
                     
