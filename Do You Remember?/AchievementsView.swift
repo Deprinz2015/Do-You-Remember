@@ -29,7 +29,7 @@ struct AchievementsView: View {
     let showAchievements = ["All", "Unfinished", "Finished"]
     @State private var selection = 1
     
-    @FetchRequest(entity: Achievement.entity(), sortDescriptors: []) var achievements: FetchedResults<Achievement>
+    @FetchRequest(entity: Achievement.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Achievement.currentProgress, ascending: false)]) var achievements: FetchedResults<Achievement>
     
     var body: some View {
         NavigationView {

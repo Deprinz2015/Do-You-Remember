@@ -52,7 +52,7 @@ struct Do_You_Remember_App: App {
                     newAchievement.setValue(200.0, forKey: "maxProgress")
                     newAchievement.setValue(Float(i * 10), forKey: "currentProgress")
                     newAchievement.setValue(200, forKey: "points")
-                    context.insert(newAchievement)
+                    newAchievement.setValue(UUID(), forKey: "id")
                 }
                 persistenceManager.saveContext()
             }
