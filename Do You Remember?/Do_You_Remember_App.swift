@@ -10,6 +10,7 @@ import CoreData
 
 @main
 struct Do_You_Remember_App: App {
+    let persistenceManager = PersistenceManager.shared
     let context = PersistenceManager.shared.container.viewContext
     
     init() {
@@ -35,21 +36,25 @@ struct Do_You_Remember_App: App {
         }
         
         let fetched = try? context.fetch(request)
+        
         if let fetched = fetched {
             print(fetched.count)
+            
             if fetched.count == 0 {
-                var achievementsToAdd = [Achievement]()
+                print("Adding...")
+                
+                let sampleDesc = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                 
                 for i in 1...20 {
-                    let ach = Achievement(context: context)
-                    ach.title = "Achievement \(i)"
-                    ach.desc = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
-                    ach.maxProgress = 200.0
-                    ach.currentProgress = Float(i * 10)
-                    ach.points = 200
-                    achievementsToAdd.append(ach)
+                    let newAchievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: context)
+                    newAchievement.setValue("Achievement \(i)", forKey: "title")
+                    newAchievement.setValue(sampleDesc, forKey: "desc")
+                    newAchievement.setValue(200.0, forKey: "maxProgress")
+                    newAchievement.setValue(Float(i * 10), forKey: "currentProgress")
+                    newAchievement.setValue(200, forKey: "points")
+                    context.insert(newAchievement)
                 }
-                try? context.save()
+                persistenceManager.saveContext()
             }
             print(fetched.count)
         }

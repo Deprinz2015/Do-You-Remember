@@ -23,7 +23,7 @@ struct AchievementDetailView: View {
                         .font(.largeTitle)
                         .padding()
                     
-                    Text(achievement.description)
+                    Text(achievement.desc ?? "Description")
                         .padding()
                     
                     VStack {
