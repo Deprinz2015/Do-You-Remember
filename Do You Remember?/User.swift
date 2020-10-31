@@ -8,8 +8,8 @@
 import Foundation
 
 struct User: Codable {
-    var level: Int
-    var progress: Int {
+    var level = 1
+    var progress = 0 {
         didSet {
             if progress >= progressForNextLevel {
                 level += 1
@@ -24,7 +24,7 @@ struct User: Codable {
         1000 * level + 200 * level * level
     }
     
-    var beginDate: Date
+    var beginDate = Date()
     var formattedDate: String {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -33,4 +33,18 @@ struct User: Codable {
     
     var homeTitle = "My Love"
     var imageName = "couple"
+    
+    init() {
+        if let data = UserDefaults.standard.data(forKey: "User") {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode(User.self, from: data) {
+                self.level = decoded.level
+                self.progress = decoded.progress
+                self.beginDate = decoded.beginDate
+                self.homeTitle = decoded.homeTitle
+                self.imageName = decoded.imageName
+                return
+            }
+        }
+    }
 }

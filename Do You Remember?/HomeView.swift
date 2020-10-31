@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var user = User(level: 1, progress: 0, beginDate: Date())
-    
-    var imageName = "couple"
-    var title = "My Love"
-    var levelText = "You are on Level 2!"
+    var user: User
     
     var body: some View {
         GeometryReader { geo in
@@ -44,12 +40,8 @@ struct HomeView: View {
                         .padding()
                     
                     Spacer()
-                    
-                    Button("Add 200 Points (For Debugging only)") {
-                        self.user.progress += 200
-                    }
                 }
-                .navigationTitle(title)
+                .navigationTitle(user.homeTitle)
             }
         }
     }
@@ -57,6 +49,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(user: User())
     }
 }

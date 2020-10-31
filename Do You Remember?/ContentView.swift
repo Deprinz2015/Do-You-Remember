@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var user = User()
+    
     var body: some View {
         TabView {
-            HomeView()
+            HomeView(user: user)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
@@ -27,8 +29,13 @@ struct ContentView: View {
                     Image(systemName: "list.bullet")
                     Text("Statistics")
                 }
+            
+            EditUserView(user: $user)
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
-        
     }
 }
 
