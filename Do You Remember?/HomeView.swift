@@ -41,7 +41,7 @@ struct HomeView: View {
                     
                     Spacer()
                 }
-                .navigationTitle(user.homeTitle)
+                .navigationTitle(user.homeTitle.isEmpty ? "My Love" : user.homeTitle)
             }
         }
     }

@@ -24,28 +24,48 @@ struct Do_You_Remember_App: App {
     }
     
     func initSampleData() {
+        deleteExisting(for: "Achievement")
         
         let request = NSFetchRequest<Achievement>(entityName: "Achievement")
         
         let fetched = try? context.fetch(request)
         
+        
         if let fetched = fetched {
             if fetched.count == 0 {
                 print("Adding...")
                 
-                let sampleDesc = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                let achievementsFromJSON: [AchievementJSONWrapper] = Bundle.main.decode("initialAchievements.json")
                 
-                for i in 1...20 {
-                    let newAchievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: context)
-                    newAchievement.setValue("Achievement \(i)", forKey: "title")
-                    newAchievement.setValue(sampleDesc, forKey: "desc")
-                    newAchievement.setValue(200.0, forKey: "maxProgress")
-                    newAchievement.setValue(Float(i * 10), forKey: "currentProgress")
-                    newAchievement.setValue(200, forKey: "points")
-                    newAchievement.setValue(UUID(), forKey: "id")
+                for achievement in achievementsFromJSON {
+                    addAchievement(withAchievement: achievement)
                 }
+                
                 persistenceManager.saveContext()
             }
         }
+    }
+    
+    func addAchievement(withAchievement achievement: AchievementJSONWrapper) {
+        let newAchievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: context)
+        
+        newAchievement.setValue(achievement.title, forKey: #keyPath(Achievement.title))
+        newAchievement.setValue(achievement.desc, forKey: #keyPath(Achievement.desc))
+        newAchievement.setValue(achievement.currentProgress, forKey: #keyPath(Achievement.currentProgress))
+        newAchievement.setValue(achievement.maxProgress, forKey: #keyPath(Achievement.maxProgress))
+        newAchievement.setValue(achievement.points, forKey: #keyPath(Achievement.points))
+    }
+    
+    func deleteExisting(for entity: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        let delete = NSBatchDeleteRequest(fetchRequest: request)
+        
+        do {
+            try context.execute(delete)
+            print("Deleting finished")
+        } catch {
+            print("Deleting crashed")
+        }
+        
     }
 }

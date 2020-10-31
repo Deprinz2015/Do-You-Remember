@@ -10,29 +10,16 @@ import SwiftUI
 struct EditUserView: View {
     @Binding var user: User
     
-    @State private var homeTitle = ""
-    @State private var imageName = "couple"
-    @State private var beginDate = Date()
-    
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    TextField("Names", text: $homeTitle)
-                    Text(imageName)
+                    TextField("Names e.g. 'Tom & Hailey'", text: $user.homeTitle)
+                    Text(user.imageName)
                 }
                 
                 Section {
-                    DatePicker("Since when are you together?", selection: $beginDate, displayedComponents: .date)
-                }
-                
-                Button("Save") {
-                    user.homeTitle = self.homeTitle.isEmpty ? "My Love" : self.homeTitle
-                    user.imageName = self.imageName.isEmpty ? "couple" : self.imageName
-                    
-                    print("In Form: \(self.homeTitle), in user: \(user.homeTitle)")
-                    
-                    user.beginDate = beginDate
+                    DatePicker("Since when are you together?", selection: $user.beginDate, in: ...Date(), displayedComponents: .date)
                 }
                 
                 Section {

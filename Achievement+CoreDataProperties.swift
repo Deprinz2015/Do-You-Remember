@@ -16,7 +16,6 @@ extension Achievement {
         return NSFetchRequest<Achievement>(entityName: "Achievement")
     }
 
-    @NSManaged public var id: UUID?
     @NSManaged public var title: String?
     @NSManaged public var desc: String?
     @NSManaged public var maxProgress: Float
