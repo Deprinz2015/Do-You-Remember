@@ -10,17 +10,30 @@ import SwiftUI
 struct LabeledProgressView: View {
     var title = ""
     var value: Float
+    var min: Float = 0.0
     var max: Float
-    var leftLabel = ""
-    var rightLabel = ""
+    var leftLabel: String?
+    var rightLabel: String?
     
     var body: some View {
         VStack {
-            ProgressView(title, value: value, total: max)
+            ProgressView(title, value: value - min, total: max - min)
             HStack {
-                Text(leftLabel)
+                if let leftLabel = leftLabel {
+                    Text(leftLabel)
+                }
+                else {
+                    Text("\(value, specifier: "%g")")
+                }
+                
                 Spacer()
-                Text(rightLabel)
+                
+                if let rightLabel = rightLabel {
+                    Text(rightLabel)
+                }
+                else {
+                    Text("\(max, specifier: "%g")")
+                }
             }
         }
     }
@@ -28,6 +41,6 @@ struct LabeledProgressView: View {
 
 struct LabeledProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        LabeledProgressView(value: 100, max: 100)
+        LabeledProgressView(title: "Level 3:", value: 100, min: 50, max: 200)
     }
 }

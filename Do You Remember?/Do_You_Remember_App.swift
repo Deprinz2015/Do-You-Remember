@@ -14,7 +14,7 @@ struct Do_You_Remember_App: App {
     let context = PersistenceManager.shared.container.viewContext
     
     init() {
-        initialData()
+        initSampleData()
     }
     
     var body: some Scene {
@@ -23,23 +23,13 @@ struct Do_You_Remember_App: App {
         }
     }
     
-    func initialData() {
+    func initSampleData() {
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Achievement")
-        let delete = NSBatchDeleteRequest(fetchRequest: request)
-        
-        do {
-            try context.execute(delete)
-            print("deleted")
-        } catch {
-            print("Lol")
-        }
+        let request = NSFetchRequest<Achievement>(entityName: "Achievement")
         
         let fetched = try? context.fetch(request)
         
         if let fetched = fetched {
-            print(fetched.count)
-            
             if fetched.count == 0 {
                 print("Adding...")
                 
@@ -56,7 +46,6 @@ struct Do_You_Remember_App: App {
                 }
                 persistenceManager.saveContext()
             }
-            print(fetched.count)
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var user = User(level: 1, progress: 0, beginDate: Date())
     
     var imageName = "couple"
     var title = "My Love"
@@ -18,7 +19,7 @@ struct HomeView: View {
             NavigationView {
                 VStack {
                     ZStack(alignment: .bottom) {
-                        Image(imageName)
+                        Image(user.imageName)
                             .resizable()
                             .scaledToFill()
                             .frame(height: geo.size.height / 2)
@@ -27,7 +28,7 @@ struct HomeView: View {
                             .frame(height: 75)
                             .opacity(0.6)
                         
-                        Text("13.02.2018")
+                        Text(user.formattedDate)
                             .foregroundColor(.white)
                             .font(.title)
                             .padding()
@@ -35,14 +36,18 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Text(levelText)
+                    Text("You are on Level \(user.level)!")
                         .font(.title)
                         .padding()
                     
-                    LabeledProgressView(title: "Level 3:", value: 4300, max: 5000, leftLabel: "4300", rightLabel: "5000")
+                    LabeledProgressView(title: "Level \(user.level + 1):", value: Float(user.progress), min: Float(user.progressForLastLevel), max: Float(user.progressForNextLevel))
                         .padding()
                     
                     Spacer()
+                    
+                    Button("Add 200 Points (For Debugging only)") {
+                        self.user.progress += 200
+                    }
                 }
                 .navigationTitle(title)
             }

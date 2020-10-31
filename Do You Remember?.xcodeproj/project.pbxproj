@@ -19,6 +19,8 @@
 		85FE178D254AC3EC00C93FDE /* Achievement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE178B254AC3EC00C93FDE /* Achievement+CoreDataClass.swift */; };
 		85FE178E254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */; };
 		85FE1792254ACA8300C93FDE /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE1791254ACA8300C93FDE /* PersistentManager.swift */; };
+		85FE17B7254CD48400C93FDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17B6254CD48400C93FDE /* User.swift */; };
+		85FE17BA254CD80F00C93FDE /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17B9254CD80F00C93FDE /* EditUserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		85FE178B254AC3EC00C93FDE /* Achievement+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataClass.swift"; sourceTree = "<group>"; };
 		85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		85FE1791254ACA8300C93FDE /* PersistentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentManager.swift; sourceTree = "<group>"; };
+		85FE17B6254CD48400C93FDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		85FE17B9254CD80F00C93FDE /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +75,11 @@
 			isa = PBXGroup;
 			children = (
 				857AA1D9254307CA00994EC6 /* Do_You_Remember_App.swift */,
+				85FE17B6254CD48400C93FDE /* User.swift */,
 				85FE1791254ACA8300C93FDE /* PersistentManager.swift */,
 				857AA1DB254307CA00994EC6 /* ContentView.swift */,
 				857AA1E92543486E00994EC6 /* HomeView.swift */,
+				85FE17B9254CD80F00C93FDE /* EditUserView.swift */,
 				85F302C0254839DF001B23AF /* LabeledProgressView.swift */,
 				85C483032546C51B00E14487 /* AchievementsView.swift */,
 				85FE1786254ABF5C00C93FDE /* Model.xcdatamodeld */,
@@ -171,7 +177,9 @@
 				85FE1792254ACA8300C93FDE /* PersistentManager.swift in Sources */,
 				857AA1DC254307CA00994EC6 /* ContentView.swift in Sources */,
 				857AA1DA254307CA00994EC6 /* Do_You_Remember_App.swift in Sources */,
+				85FE17BA254CD80F00C93FDE /* EditUserView.swift in Sources */,
 				85FE178D254AC3EC00C93FDE /* Achievement+CoreDataClass.swift in Sources */,
+				85FE17B7254CD48400C93FDE /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
