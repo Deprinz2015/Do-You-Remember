@@ -10,7 +10,8 @@ import Foundation
 struct AchievementJSONWrapper: Decodable {
     var title: String
     var desc: String
-    var currentProgress: Float
-    var maxProgress: Float
+    var task: String
+    var currentProgress: Int
+    var maxProgress: Int
     var points: Int
 }

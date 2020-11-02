@@ -38,22 +38,12 @@ struct Do_You_Remember_App: App {
                 let achievementsFromJSON: [AchievementJSONWrapper] = Bundle.main.decode("initialAchievements.json")
                 
                 for achievement in achievementsFromJSON {
-                    addAchievement(withAchievement: achievement)
+                    persistenceManager.addAchievement(withWrapper: achievement)
                 }
                 
                 persistenceManager.saveContext()
             }
         }
-    }
-    
-    func addAchievement(withAchievement achievement: AchievementJSONWrapper) {
-        let newAchievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: context)
-        
-        newAchievement.setValue(achievement.title, forKey: #keyPath(Achievement.title))
-        newAchievement.setValue(achievement.desc, forKey: #keyPath(Achievement.desc))
-        newAchievement.setValue(achievement.currentProgress, forKey: #keyPath(Achievement.currentProgress))
-        newAchievement.setValue(achievement.maxProgress, forKey: #keyPath(Achievement.maxProgress))
-        newAchievement.setValue(achievement.points, forKey: #keyPath(Achievement.points))
     }
     
     func deleteExisting(for entity: String) {

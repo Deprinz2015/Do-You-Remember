@@ -24,6 +24,7 @@
 		85FE17CE254DDE7C00C93FDE /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */; };
 		85FE17D1254DE29700C93FDE /* AchievementJSONWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */; };
 		85FE17D7254DE9C600C93FDE /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17D5254DE9C600C93FDE /* Model.xcdatamodeld */; };
+		85FE184025500DAA00C93FDE /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE183F25500DA900C93FDE /* StatisticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementJSONWrapper.swift; sourceTree = "<group>"; };
 		85FE17D6254DE9C600C93FDE /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		85FE183F25500DA900C93FDE /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,17 +82,18 @@
 		857AA1D8254307CA00994EC6 /* Do You Remember? */ = {
 			isa = PBXGroup;
 			children = (
-				85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */,
 				857AA1D9254307CA00994EC6 /* Do_You_Remember_App.swift */,
 				85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */,
 				85FE17B6254CD48400C93FDE /* User.swift */,
 				85FE1791254ACA8300C93FDE /* PersistentManager.swift */,
 				857AA1DB254307CA00994EC6 /* ContentView.swift */,
+				85FE183F25500DA900C93FDE /* StatisticsView.swift */,
 				857AA1E92543486E00994EC6 /* HomeView.swift */,
 				85FE17B9254CD80F00C93FDE /* EditUserView.swift */,
 				85F302C0254839DF001B23AF /* LabeledProgressView.swift */,
 				85C483032546C51B00E14487 /* AchievementsView.swift */,
 				85C4830725473EB100E14487 /* AchievementDetailView.swift */,
+				85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */,
 				857AA1DD254307CE00994EC6 /* Assets.xcassets */,
 				857AA1E2254307CE00994EC6 /* Info.plist */,
 				85FE17CA254DD98A00C93FDE /* initialAchievements.json */,
@@ -179,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85C483042546C51B00E14487 /* AchievementsView.swift in Sources */,
+				85FE184025500DAA00C93FDE /* StatisticsView.swift in Sources */,
 				85C4830825473EB100E14487 /* AchievementDetailView.swift in Sources */,
 				857AA1EA2543486E00994EC6 /* HomeView.swift in Sources */,
 				85FE17D7254DE9C600C93FDE /* Model.xcdatamodeld in Sources */,

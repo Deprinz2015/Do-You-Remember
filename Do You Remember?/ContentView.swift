@@ -18,13 +18,13 @@ struct ContentView: View {
                     Text("Home")
                 }
             
-            AchievementsView()
+            AchievementsView(user: $user)
                 .tabItem {
                     Image(systemName: "sparkle")
                     Text("Achievements")
                 }
             
-            Text("Statistics")
+            StatisticsView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Statistics")
@@ -36,6 +36,7 @@ struct ContentView: View {
                     Text("Settings")
                 }
         }
+        
     }
 }
 

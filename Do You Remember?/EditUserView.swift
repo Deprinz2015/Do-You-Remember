@@ -22,9 +22,16 @@ struct EditUserView: View {
                     DatePicker("Since when are you together?", selection: $user.beginDate, in: ...Date(), displayedComponents: .date)
                 }
                 
-                Section {
-                    Button("Add 200 Points (For Debugging only)") {
+                Section(header: Text("For debugging purposes")) {
+                    Button("Add 200 Points") {
                         self.user.progress += 200
+                    }
+                    Button("Reset Points") {
+                        self.user.progress = 0
+                        self.user.level = 1
+                    }
+                    Button("Reset Everything") {
+                        self.user.reset()
                     }
                 }
             }

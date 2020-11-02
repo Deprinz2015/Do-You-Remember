@@ -66,4 +66,12 @@ struct User: Codable {
             UserDefaults.standard.setValue(data, forKey: User.userDefaultsKey)
         }
     }
+    
+    mutating func reset() {
+        self.progress = 0
+        self.level = 1
+        self.beginDate = Date()
+        self.homeTitle = ""
+        self.imageName = "couple"
+    }
 }

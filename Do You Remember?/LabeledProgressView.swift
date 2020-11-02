@@ -15,6 +15,11 @@ struct LabeledProgressView: View {
     var leftLabel: String?
     var rightLabel: String?
     
+    var animatableData: Float {
+        get { value }
+        set { value = newValue }
+    }
+    
     var body: some View {
         VStack {
             ProgressView(title, value: value - min, total: max - min)

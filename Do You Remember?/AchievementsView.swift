@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AchievementItem: View {
-    var achievement: Achievement
+    @ObservedObject var achievement: Achievement
     
     var body: some View {
         HStack {
@@ -17,7 +17,7 @@ struct AchievementItem: View {
                 .frame(width: 25, height: 25)
             VStack(alignment: .leading) {
                 Text(achievement.title ?? "Achievement").font(.headline)
-                Text("\(achievement.currentProgress, specifier: "%g") / \(achievement.maxProgress, specifier: "%g")")
+                Text("Progress: \(achievement.currentProgress) / \(achievement.maxProgress)")
                     .font(.subheadline)
             }
         }
@@ -26,10 +26,15 @@ struct AchievementItem: View {
 }
 
 struct AchievementsView: View {
+    @Binding var user: User
+    
     let showAchievements = ["All", "Unfinished", "Finished"]
     @State private var selection = 1
     
-    @FetchRequest(entity: Achievement.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Achievement.currentProgress, ascending: false)]) var achievements: FetchedResults<Achievement>
+    @FetchRequest(
+        entity: Achievement.entity(),
+        sortDescriptors: [])
+    var achievements: FetchedResults<Achievement>
     
     var body: some View {
         NavigationView {
@@ -47,7 +52,7 @@ struct AchievementsView: View {
                     List {
                         ForEach(achievements.filter(showAchievement)) { achievement in
                             NavigationLink(
-                                destination: AchievementDetailView(achievement: achievement),
+                                destination: AchievementDetailView(achievement: achievement, user: $user),
                                 label: {
                                     AchievementItem(achievement: achievement)
                                 })
@@ -76,6 +81,6 @@ struct AchievementsView: View {
 
 struct AchievementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementsView().preferredColorScheme(.dark)
+        AchievementsView(user: .constant(User())).preferredColorScheme(.dark)
     }
 }
