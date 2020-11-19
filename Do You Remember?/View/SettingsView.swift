@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditUserView: View {
+struct SettingsView: View {
     @Binding var user: User
     
     var body: some View {
@@ -19,7 +19,15 @@ struct EditUserView: View {
                 }
                 
                 Section {
-                    DatePicker("Since when are you together?", selection: $user.beginDate, in: ...Date(), displayedComponents: .date)
+                    DatePicker("When did you get together?", selection: $user.beginDate, in: ...Date(), displayedComponents: .date)
+                }
+                
+                if user.level >= 4 {
+                    Section {
+                        Button("Memories") {
+                            print("Redirect to memories")
+                        }
+                    }
                 }
                 
                 Section(header: Text("For debugging purposes")) {
@@ -32,16 +40,17 @@ struct EditUserView: View {
                     }
                     Button("Reset Everything") {
                         self.user.reset()
+                        UserDefaults.standard.setValue(true, forKey: "ResetAchievements")
                     }
                 }
             }
+            .navigationTitle("Settings")
         }
-        .navigationTitle("Settings")
     }
 }
 
-struct EditUserView_Previews: PreviewProvider {
+struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        EditUserView(user: .constant(User()))
+        SettingsView(user: .constant(User()))
     }
 }

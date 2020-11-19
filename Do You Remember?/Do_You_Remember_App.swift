@@ -10,23 +10,30 @@ import CoreData
 
 @main
 struct Do_You_Remember_App: App {
-    let persistenceManager = PersistenceManager.shared
-    let context = PersistenceManager.shared.container.viewContext
+    
     
     init() {
-        initSampleData()
+        let reset = UserDefaults.standard.bool(forKey: "ResetAchievements")
+        if reset {
+            deleteExisting(for: "Achievement")
+            initSampleData()
+            UserDefaults.standard.setValue(false, forKey: "ResetAchievements")
+        }
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView().environment(\.managedObjectContext, context)
+            ContentView().environment(\.managedObjectContext, SharedConstants.context)
         }
     }
     
     func initSampleData() {
-        deleteExisting(for: "Achievement")
+        let context = SharedConstants.context
+        let persistenceManager = SharedConstants.persistenceManager
         
-        let request = NSFetchRequest<Achievement>(entityName: "Achievement")
+        
+        
+        let request: NSFetchRequest<Achievement> = Achievement.fetchRequest()
         
         let fetched = try? context.fetch(request)
         
@@ -51,7 +58,7 @@ struct Do_You_Remember_App: App {
         let delete = NSBatchDeleteRequest(fetchRequest: request)
         
         do {
-            try context.execute(delete)
+            try SharedConstants.context.execute(delete)
             print("Deleting finished")
         } catch {
             print("Deleting crashed")

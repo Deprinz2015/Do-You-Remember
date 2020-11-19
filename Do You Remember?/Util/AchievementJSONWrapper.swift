@@ -11,7 +11,6 @@ struct AchievementJSONWrapper: Decodable {
     var title: String
     var desc: String
     var task: String
-    var currentProgress: Int
-    var maxProgress: Int
-    var points: Int
+    var maxProgresses: [Int]
+    var points: [Int]
 }

@@ -8,33 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var currentTab = 0
     @State private var user = User()
     
     var body: some View {
-        TabView {
+        TabView(selection: $currentTab) {
             HomeView(user: user)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
-                }
+                }.tag(0)
             
-            AchievementsView(user: $user)
+            AchievementsView(user: user)
                 .tabItem {
                     Image(systemName: "sparkle")
                     Text("Achievements")
-                }
+                }.tag(1)
             
-            StatisticsView()
+            if user.level >= 3 {
+                CalendarView(user: user)
+                    .tabItem {
+                        Image(systemName: "calendar.circle")
+                        Text("Calendar")
+                    }.tag(2)
+            }
+            
+            StatisticsView(user: user)
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Statistics")
-                }
+                }.tag(3)
             
-            EditUserView(user: $user)
+            SettingsView(user: $user)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-                }
+                }.tag(4)
         }
         
     }

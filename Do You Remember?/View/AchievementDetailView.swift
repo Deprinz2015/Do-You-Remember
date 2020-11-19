@@ -20,31 +20,35 @@ struct AchievementDetailView: View {
                     .frame(width: 100, height: 100)
                     .padding()
                 
-                Text(achievement.title ?? "Achievement")
+                Text(achievement.title)
                     .font(.largeTitle)
                     .padding()
                 
-                Text(achievement.desc ?? "Description")
+                Text(achievement.desc)
                     .padding()
                 
-                Text(achievement.task ?? "Do something")
+                Text(achievement.task)
                     .fontWeight(.bold)
                     .padding()
                 
-                Text("Points: \(achievement.points)")
-                    .padding()
-                
-                LabeledProgressView(title: "Progress", value: Float(achievement.currentProgress), max: Float(achievement.maxProgress), leftLabel: "\(achievement.currentProgress)", rightLabel: "\(achievement.maxProgress)")
-                    .padding()
+                if !achievement.finished {
+                    Text("Points: \(achievement.points[achievement.progressIndex])")
+                        .padding()
+                    
+                    LabeledProgressView(title: "Progress",
+                                        value: Float(achievement.currentProgress),
+                                        max: Float(achievement.maxProgresses[achievement.progressIndex]),
+                                        leftLabel: "\(achievement.currentProgress)",
+                                        rightLabel: "\(achievement.maxProgresses[achievement.progressIndex])")
+                        .padding()
+                } else {
+                    Text("Completed on: \(SharedConstants.dateFormatter.string(from: achievement.completionDate ?? Date()))")
+                        .padding()
+                }
                 
                 if !achievement.finished {
                     Button("We did it!") {
-                        withAnimation(.easeInOut) {
-                            achievement.currentProgress += 1
-                        }
-                        if achievement.currentProgress == achievement.maxProgress {
-                            user.progress += Int(achievement.points)
-                        }
+                        achievement.addProgress(amount: 1, user: &user)
                     }
                     .font(.headline)
                     .padding()
@@ -56,7 +60,7 @@ struct AchievementDetailView: View {
             .onDisappear(perform: {
                 let context = PersistenceManager.shared.container.viewContext
                 let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Achievement")
-                fetchRequest.predicate = NSPredicate(format: "uuid = %@", achievement.uuid! as CVarArg)
+                fetchRequest.predicate = NSPredicate(format: "uuid = %@", achievement.uuid as CVarArg)
                 do {
                     let results = try context.fetch(fetchRequest) as? [NSManagedObject]
                     if let result = results?[0] {

@@ -36,7 +36,7 @@ struct HomeView: View {
                         .font(.title)
                         .padding()
                     
-                    LabeledProgressView(title: "Level \(user.level + 1):", value: Float(user.progress), min: Float(user.progressForLastLevel), max: Float(user.progressForNextLevel))
+                    LabeledProgressView(title: "Level \(user.level + 1):", value: Float(user.progress - user.progressForLastLevel), max: Float(user.progressForNextLevel - user.progressForLastLevel))
                         .padding()
                     
                     Spacer()

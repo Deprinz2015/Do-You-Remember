@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Counting the Days",
+        "desc": "Count the days with your partner to really appreciate their presence. Make them feel good on every single day again. This way, counting the days is even easier because every single on of them will be unique.",
+        "task": "Stay together for 100 days",
+        "currentProgress": 0,
+        "maxProgress": 200,
+        "points": 200
+    },
+    {
+        "title": "Months of Love",
+        "desc": "Every Month you are together is a milestone of its own. You two get to know a new part of each other with every month you add to your journey. Every month should be celebrated as the achievement it is.",
+        "task": "Stay together for 1 month",
+        "currentProgress": 0,
+        "maxProgress": 200,
+        "points": 200
+    },
+    {
+        "title": "Years after Years",
+        "desc": "The more years you are together, the stronger the bond between you grows. This bond holds you even closer together, the longer it is there. Even if there are hard times you two have to survive sometimes, the bond between still grows.",
+        "task":"Stay together for 1 years",
+        "currentProgress": 0,
+        "maxProgress": 200,
+        "points": 200
+    },
+    {
+        "title": "Your life is a movie",
+        "desc": "Watching movies together is a thing for itself. On the one hand, while watching a movie in the cinema, you can't really talk. But on the other Hand, to embrace your significant other when a sad scene occurs, or just hugging or kissing while a romantic scene is playing is one of the loveliest things you can do while watching a movie.",
+        "task": "Go to the cinema and watch 1 movie together",
+        "currentProgress": 0,
+        "maxProgress": 200,
+        "points": 200
+    }, 
+    {
+        "title": "Amusement goes beyond your home",
+        "desc": "Going on rollercoasters makes your heart beat higher. Now imagine going on a rollercoaster while holding hands with your favourite person on earth. This is a big adventure you can take together. An amusement park also doesn't only have rollercoaster. A slow, dark ride is the perfect opportunity to make a hidden kiss without someone watching",
+        "task": "Go to 1 amusement park together",
+        "currentProgress": 0,
+        "maxProgress": 200,
+        "points": 200
+    }
+]

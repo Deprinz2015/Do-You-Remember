@@ -8,8 +8,6 @@
 import Foundation
 
 struct User: Codable {
-    static let userDefaultsKey = "User"
-    
     // Declared Properties
     var level = 1
     var progress = 0 {
@@ -17,7 +15,6 @@ struct User: Codable {
             if progress >= progressForNextLevel {
                 level += 1
             }
-            
             saveToDisk()
         }
     }
@@ -46,7 +43,7 @@ struct User: Codable {
     }
     
     init() {
-        if let data = UserDefaults.standard.data(forKey: User.userDefaultsKey) {
+        if let data = UserDefaults.standard.data(forKey: SharedConstants.userDefaultsKey) {
             let decoder = JSONDecoder()
             if let decoded = try? decoder.decode(User.self, from: data) {
                 self.level = decoded.level
@@ -58,12 +55,12 @@ struct User: Codable {
             }
         }
     }
-    
+        
     // Functions
     func saveToDisk() {
         let encoder = JSONEncoder()
         if let data = try? encoder.encode(self) {
-            UserDefaults.standard.setValue(data, forKey: User.userDefaultsKey)
+            UserDefaults.standard.setValue(data, forKey: SharedConstants.userDefaultsKey)
         }
     }
     

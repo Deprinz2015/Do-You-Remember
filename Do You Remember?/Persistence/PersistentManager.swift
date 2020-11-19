@@ -22,25 +22,26 @@ class PersistenceManager {
         })
     }
     
-    func addAchievement(withWrapper achievement: AchievementJSONWrapper) {
-        addAchievement(title: achievement.title,
-                       desc: achievement.desc,
-                       task: achievement.task,
-                       currentProgress: achievement.currentProgress,
-                       maxProgress: achievement.maxProgress,
-                       points: achievement.points)
+    func addAchievement(withWrapper wrapper: AchievementJSONWrapper) {
+        addAchievement(title: wrapper.title,
+                       desc: wrapper.desc,
+                       task: wrapper.task,
+                       maxProgresses: wrapper.maxProgresses,
+                       points: wrapper.points)
     }
     
-    func addAchievement(title: String, desc: String, task: String, currentProgress: Int, maxProgress: Int, points: Int) {
+    func addAchievement(title: String, desc: String, task: String, maxProgresses: [Int], points: [Int]) {
         let newAchievement = NSEntityDescription.insertNewObject(forEntityName: "Achievement", into: container.viewContext)
         
+        newAchievement.setValue(UUID(), forKey: #keyPath(Achievement.uuid))
         newAchievement.setValue(title, forKey: #keyPath(Achievement.title))
         newAchievement.setValue(desc, forKey: #keyPath(Achievement.desc))
-        newAchievement.setValue(currentProgress, forKey: #keyPath(Achievement.currentProgress))
-        newAchievement.setValue(maxProgress, forKey: #keyPath(Achievement.maxProgress))
-        newAchievement.setValue(points, forKey: #keyPath(Achievement.points))
         newAchievement.setValue(task, forKey: #keyPath(Achievement.task))
-        newAchievement.setValue(UUID(), forKey: #keyPath(Achievement.uuid))
+        newAchievement.setValue(points, forKey: #keyPath(Achievement.points))
+        newAchievement.setValue(maxProgresses, forKey: #keyPath(Achievement.maxProgresses))
+        newAchievement.setValue(0, forKey: #keyPath(Achievement.progressIndex16))
+        newAchievement.setValue(0, forKey: #keyPath(Achievement.currentProgress))
+        newAchievement.setValue(nil, forKey: #keyPath(Achievement.completionDate))
     }
     
     func saveContext() {

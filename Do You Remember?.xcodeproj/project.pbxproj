@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,12 @@
 		857AA1DE254307CE00994EC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857AA1DD254307CE00994EC6 /* Assets.xcassets */; };
 		857AA1E1254307CE00994EC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 857AA1E0254307CE00994EC6 /* Preview Assets.xcassets */; };
 		857AA1EA2543486E00994EC6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857AA1E92543486E00994EC6 /* HomeView.swift */; };
+		859B8C642553F9870045DE89 /* SharedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B8C632553F9870045DE89 /* SharedConstants.swift */; };
+		859B8C6E255704620045DE89 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859B8C6D255704620045DE89 /* CalendarView.swift */; };
+		85BCAA192559447D0099B6A2 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCAA182559447D0099B6A2 /* Achievement.swift */; };
+		85BCAA2225596B350099B6A2 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BCAA2125596B350099B6A2 /* AchievementViewModel.swift */; };
+		85BCAA27255ADDD20099B6A2 /* ElegantCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 85BCAA26255ADDD20099B6A2 /* ElegantCalendar */; };
+		85BCAA2A255AE1230099B6A2 /* ElegantCalendar.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85BCAA29255AE1230099B6A2 /* ElegantCalendar.xcassets */; };
 		85C483042546C51B00E14487 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C483032546C51B00E14487 /* AchievementsView.swift */; };
 		85C4830825473EB100E14487 /* AchievementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C4830725473EB100E14487 /* AchievementDetailView.swift */; };
 		85F302C1254839DF001B23AF /* LabeledProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F302C0254839DF001B23AF /* LabeledProgressView.swift */; };
@@ -19,7 +25,7 @@
 		85FE178E254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */; };
 		85FE1792254ACA8300C93FDE /* PersistentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE1791254ACA8300C93FDE /* PersistentManager.swift */; };
 		85FE17B7254CD48400C93FDE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17B6254CD48400C93FDE /* User.swift */; };
-		85FE17BA254CD80F00C93FDE /* EditUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17B9254CD80F00C93FDE /* EditUserView.swift */; };
+		85FE17BA254CD80F00C93FDE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17B9254CD80F00C93FDE /* SettingsView.swift */; };
 		85FE17CB254DD98D00C93FDE /* initialAchievements.json in Resources */ = {isa = PBXBuildFile; fileRef = 85FE17CA254DD98A00C93FDE /* initialAchievements.json */; };
 		85FE17CE254DDE7C00C93FDE /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */; };
 		85FE17D1254DE29700C93FDE /* AchievementJSONWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */; };
@@ -35,6 +41,11 @@
 		857AA1E0254307CE00994EC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		857AA1E2254307CE00994EC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		857AA1E92543486E00994EC6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		859B8C632553F9870045DE89 /* SharedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConstants.swift; sourceTree = "<group>"; };
+		859B8C6D255704620045DE89 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		85BCAA182559447D0099B6A2 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		85BCAA2125596B350099B6A2 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
+		85BCAA29255AE1230099B6A2 /* ElegantCalendar.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ElegantCalendar.xcassets; path = "../../../../Library/Developer/Xcode/DerivedData/Do_You_Remember?-czccsoacgiizeeerurdtjtonslul/SourcePackages/checkouts/ElegantCalendar/ElegantCalendar.xcassets"; sourceTree = "<group>"; };
 		85C483032546C51B00E14487 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		85C4830725473EB100E14487 /* AchievementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailView.swift; sourceTree = "<group>"; };
 		85F302C0254839DF001B23AF /* LabeledProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabeledProgressView.swift; sourceTree = "<group>"; };
@@ -42,7 +53,7 @@
 		85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Achievement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		85FE1791254ACA8300C93FDE /* PersistentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentManager.swift; sourceTree = "<group>"; };
 		85FE17B6254CD48400C93FDE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		85FE17B9254CD80F00C93FDE /* EditUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserView.swift; sourceTree = "<group>"; };
+		85FE17B9254CD80F00C93FDE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		85FE17CA254DD98A00C93FDE /* initialAchievements.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = initialAchievements.json; sourceTree = "<group>"; };
 		85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementJSONWrapper.swift; sourceTree = "<group>"; };
@@ -55,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BCAA27255ADDD20099B6A2 /* ElegantCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,8 +76,7 @@
 		857AA1CD254307CA00994EC6 = {
 			isa = PBXGroup;
 			children = (
-				85FE178B254AC3EC00C93FDE /* Achievement+CoreDataClass.swift */,
-				85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */,
+				85BCAA29255AE1230099B6A2 /* ElegantCalendar.xcassets */,
 				857AA1D8254307CA00994EC6 /* Do You Remember? */,
 				857AA1D7254307CA00994EC6 /* Products */,
 			);
@@ -82,22 +93,14 @@
 		857AA1D8254307CA00994EC6 /* Do You Remember? */ = {
 			isa = PBXGroup;
 			children = (
+				85BCAA17255944510099B6A2 /* Persistence */,
+				85BCAA14255944390099B6A2 /* Util */,
+				85BCAA0C2559419D0099B6A2 /* Model */,
+				85BCAA0B255941920099B6A2 /* View */,
 				857AA1D9254307CA00994EC6 /* Do_You_Remember_App.swift */,
-				85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */,
-				85FE17B6254CD48400C93FDE /* User.swift */,
-				85FE1791254ACA8300C93FDE /* PersistentManager.swift */,
-				857AA1DB254307CA00994EC6 /* ContentView.swift */,
-				85FE183F25500DA900C93FDE /* StatisticsView.swift */,
-				857AA1E92543486E00994EC6 /* HomeView.swift */,
-				85FE17B9254CD80F00C93FDE /* EditUserView.swift */,
-				85F302C0254839DF001B23AF /* LabeledProgressView.swift */,
-				85C483032546C51B00E14487 /* AchievementsView.swift */,
-				85C4830725473EB100E14487 /* AchievementDetailView.swift */,
-				85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */,
 				857AA1DD254307CE00994EC6 /* Assets.xcassets */,
 				857AA1E2254307CE00994EC6 /* Info.plist */,
 				85FE17CA254DD98A00C93FDE /* initialAchievements.json */,
-				85FE17D5254DE9C600C93FDE /* Model.xcdatamodeld */,
 				857AA1DF254307CE00994EC6 /* Preview Content */,
 			);
 			path = "Do You Remember?";
@@ -109,6 +112,52 @@
 				857AA1E0254307CE00994EC6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		85BCAA0B255941920099B6A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				857AA1DB254307CA00994EC6 /* ContentView.swift */,
+				857AA1E92543486E00994EC6 /* HomeView.swift */,
+				85C483032546C51B00E14487 /* AchievementsView.swift */,
+				85C4830725473EB100E14487 /* AchievementDetailView.swift */,
+				859B8C6D255704620045DE89 /* CalendarView.swift */,
+				85FE183F25500DA900C93FDE /* StatisticsView.swift */,
+				85FE17B9254CD80F00C93FDE /* SettingsView.swift */,
+				85F302C0254839DF001B23AF /* LabeledProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		85BCAA0C2559419D0099B6A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				85FE17B6254CD48400C93FDE /* User.swift */,
+				85BCAA182559447D0099B6A2 /* Achievement.swift */,
+				85BCAA2125596B350099B6A2 /* AchievementViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		85BCAA14255944390099B6A2 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				85FE17D0254DE29700C93FDE /* AchievementJSONWrapper.swift */,
+				85FE17CD254DDE7C00C93FDE /* Bundle-Decodable.swift */,
+				859B8C632553F9870045DE89 /* SharedConstants.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		85BCAA17255944510099B6A2 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				85FE17D5254DE9C600C93FDE /* Model.xcdatamodeld */,
+				85FE1791254ACA8300C93FDE /* PersistentManager.swift */,
+				85FE178B254AC3EC00C93FDE /* Achievement+CoreDataClass.swift */,
+				85FE178C254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +176,9 @@
 			dependencies = (
 			);
 			name = "Do You Remember?";
+			packageProductDependencies = (
+				85BCAA26255ADDD20099B6A2 /* ElegantCalendar */,
+			);
 			productName = "Do You Remember?";
 			productReference = 857AA1D6254307CA00994EC6 /* Do You Remember?.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +206,9 @@
 				Base,
 			);
 			mainGroup = 857AA1CD254307CA00994EC6;
+			packageReferences = (
+				85BCAA25255ADDD20099B6A2 /* XCRemoteSwiftPackageReference "ElegantCalendar" */,
+			);
 			productRefGroup = 857AA1D7254307CA00994EC6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85BCAA2A255AE1230099B6A2 /* ElegantCalendar.xcassets in Resources */,
 				857AA1E1254307CE00994EC6 /* Preview Assets.xcassets in Resources */,
 				857AA1DE254307CE00994EC6 /* Assets.xcassets in Resources */,
 				85FE17CB254DD98D00C93FDE /* initialAchievements.json in Resources */,
@@ -184,18 +240,22 @@
 				85C483042546C51B00E14487 /* AchievementsView.swift in Sources */,
 				85FE184025500DAA00C93FDE /* StatisticsView.swift in Sources */,
 				85C4830825473EB100E14487 /* AchievementDetailView.swift in Sources */,
+				859B8C6E255704620045DE89 /* CalendarView.swift in Sources */,
 				857AA1EA2543486E00994EC6 /* HomeView.swift in Sources */,
+				859B8C642553F9870045DE89 /* SharedConstants.swift in Sources */,
 				85FE17D7254DE9C600C93FDE /* Model.xcdatamodeld in Sources */,
 				85FE17CE254DDE7C00C93FDE /* Bundle-Decodable.swift in Sources */,
 				85F302C1254839DF001B23AF /* LabeledProgressView.swift in Sources */,
+				85BCAA2225596B350099B6A2 /* AchievementViewModel.swift in Sources */,
 				85FE178E254AC3EC00C93FDE /* Achievement+CoreDataProperties.swift in Sources */,
 				85FE1792254ACA8300C93FDE /* PersistentManager.swift in Sources */,
 				857AA1DC254307CA00994EC6 /* ContentView.swift in Sources */,
 				857AA1DA254307CA00994EC6 /* Do_You_Remember_App.swift in Sources */,
-				85FE17BA254CD80F00C93FDE /* EditUserView.swift in Sources */,
+				85FE17BA254CD80F00C93FDE /* SettingsView.swift in Sources */,
 				85FE17D1254DE29700C93FDE /* AchievementJSONWrapper.swift in Sources */,
 				85FE178D254AC3EC00C93FDE /* Achievement+CoreDataClass.swift in Sources */,
 				85FE17B7254CD48400C93FDE /* User.swift in Sources */,
+				85BCAA192559447D0099B6A2 /* Achievement.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +444,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		85BCAA25255ADDD20099B6A2 /* XCRemoteSwiftPackageReference "ElegantCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		85BCAA26255ADDD20099B6A2 /* ElegantCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 85BCAA25255ADDD20099B6A2 /* XCRemoteSwiftPackageReference "ElegantCalendar" */;
+			productName = ElegantCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		85FE17D5254DE9C600C93FDE /* Model.xcdatamodeld */ = {

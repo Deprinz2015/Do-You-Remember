@@ -16,8 +16,10 @@ struct AchievementItem: View {
                 .resizable()
                 .frame(width: 25, height: 25)
             VStack(alignment: .leading) {
-                Text(achievement.title ?? "Achievement").font(.headline)
-                Text("Progress: \(achievement.currentProgress) / \(achievement.maxProgress)")
+                Text(achievement.title).font(.headline)
+                Text(achievement.finished ?
+                        "Completed!" :
+                        "Progress: \(achievement.currentProgress) / \(achievement.maxProgresses[achievement.progressIndex])")
                     .font(.subheadline)
             }
         }
@@ -26,22 +28,18 @@ struct AchievementItem: View {
 }
 
 struct AchievementsView: View {
-    @Binding var user: User
+    @ObservedObject private var vm: AchievementViewModel
     
-    let showAchievements = ["All", "Unfinished", "Finished"]
-    @State private var selection = 1
-    
-    @FetchRequest(
-        entity: Achievement.entity(),
-        sortDescriptors: [])
-    var achievements: FetchedResults<Achievement>
+    init(user: User) {
+        self.vm = AchievementViewModel(user: user)
+    }
     
     var body: some View {
         NavigationView {
             VStack {
-                Picker("Which Achievements to show?", selection: $selection) {
-                    ForEach(0 ..< self.showAchievements.count) {
-                        Text(showAchievements[$0])
+                Picker("Which Achievements to show?", selection: $vm.selection) {
+                    ForEach(AchievementViewModel.FilteredBy.allCases) {
+                        Text($0.rawValue.capitalized).tag($0)
                     }
                 }
                 .pickerStyle(SegmentedPickerStyle())
@@ -50,9 +48,9 @@ struct AchievementsView: View {
                 
                 Section {
                     List {
-                        ForEach(achievements.filter(showAchievement)) { achievement in
+                        ForEach(vm.achievements) { achievement in
                             NavigationLink(
-                                destination: AchievementDetailView(achievement: achievement, user: $user),
+                                destination: AchievementDetailView(achievement: achievement, user: $vm.user),
                                 label: {
                                     AchievementItem(achievement: achievement)
                                 })
@@ -64,23 +62,10 @@ struct AchievementsView: View {
             .navigationTitle("Achievements")
         }
     }
-    
-    func showAchievement(achievement: Achievement) -> Bool {
-        switch selection {
-            case 0:
-                return true
-            case 1:
-                return achievement.finished == false
-            case 2:
-                return achievement.finished
-            default:
-                return false
-        }
-    }
 }
 
 struct AchievementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementsView(user: .constant(User())).preferredColorScheme(.dark)
+        AchievementsView(user: User()).preferredColorScheme(.dark)
     }
 }

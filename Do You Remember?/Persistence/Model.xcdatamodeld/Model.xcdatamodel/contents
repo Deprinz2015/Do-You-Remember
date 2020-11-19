@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Achievement" representedClassName=".Achievement" syncable="YES">
+        <attribute name="completionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="currentProgress" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="desc" attributeType="String"/>
+        <attribute name="maxProgresses" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Array&lt;Int&gt;"/>
+        <attribute name="points" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Array&lt;Int&gt;"/>
+        <attribute name="progressIndex16" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="task" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Achievement" positionX="-63" positionY="-18" width="128" height="178"/>
+    </elements>
+</model>
